@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Teste iCasei: Front-End
 Desenvolver uma aplicação HTML5
 
@@ -45,3 +46,29 @@ Essa tela deve ter um botão para voltar, exibindo os últimos resultados da bus
 - Lógica do código
 - Uso do Git
 - Uso de componentização
+=======
+# icasei-teste-youtube
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+>>>>>>> init
