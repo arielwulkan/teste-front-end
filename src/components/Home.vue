@@ -8,13 +8,6 @@
       v-bind:reformattedSearchString="reformattedSearchString"
       v-on:next-page="nextPage"
     />
-    <Pagination
-      v-if="videos.length > 0"
-      v-bind:prevPageToken="api.prevPageToken"
-      v-bind:nextPageToken="api.nextPageToken"
-      v-on:prev-page="prevPage"
-      v-on:next-page="nextPage"
-    />
   </div>
 </template>
 
@@ -22,7 +15,6 @@
 import Header from './layout/Header';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
-import Pagination from './Pagination';
 import axios from 'axios';
 
 export default {
@@ -31,7 +23,6 @@ export default {
     Header,
     SearchForm,
     SearchResults,
-    Pagination
   },
   data() {
     return {
