@@ -6,6 +6,7 @@
       v-if="videos.length > 0"
       v-bind:videos="videos"
       v-bind:reformattedSearchString="reformattedSearchString"
+      v-on:next-page="nextPage"
     />
     <Pagination
       v-if="videos.length > 0"
@@ -74,12 +75,15 @@ export default {
       axios
         .get(apiUrl)
         .then(res => {
-          this.videos = res.data.items;
+          let items = []
+          items = res.data.items;
+          this.videos.push(...items);
           this.api.prevPageToken = res.data.prevPageToken;
           this.api.nextPageToken = res.data.nextPageToken;
         })
         //.catch(error => console.log(error));
     }
+    
   }
 };
 </script>
