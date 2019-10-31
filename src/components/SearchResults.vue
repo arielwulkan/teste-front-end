@@ -58,9 +58,21 @@ export default {
   methods: {
     changeDisplayMode(displayMode) {
       this.displayMode = displayMode;
-    }
+    },
+    hscroll () {
+      window.onscroll = () => {
+        let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
+        if (bottomOfWindow) {
+          this.$emit('next-page');
+        }
+      };
+    },
   },
-  props: ['videos', 'reformattedSearchString']
+  props: ['videos', 'reformattedSearchString', 'nextPageToken'],
+  mounted() {
+    this.hscroll();
+  }
 };
 </script>
 
