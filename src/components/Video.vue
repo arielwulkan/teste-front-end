@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <button class="btn" @click="back()">Voltar</button>
     <div class="justify-content-md-center mt-5">
       <div class="col-md-6 text-centered">
 
@@ -46,6 +47,9 @@ export default {
       const { baseUrl, part, video_id, key } = this.api;
       const apiUrl = `${baseUrl}id=${video_id}&part=${part},statistics&key=${key}`;
       this.getData(apiUrl);
+    },
+    back() {
+      this.$router.go(-1);
     },
 
     getData(apiUrl) {
