@@ -1,12 +1,20 @@
 <template>
-  <div>
+  <div class="container">
+    <div class="justify-content-md-center mt-5">
+      <div class="col-md-6 text-centered">
 
-    <ul>
-      <li v-bind:key="video.id.videoId" v-for="video in videos">
-        {{video.snippet.title}}
-      </li>
-    </ul>
+          <div v-bind:key="video.id.videoId" v-for="video in videos">
+            
+            <img :src="video.snippet.thumbnails.medium.url" alt="YouTube thumbnail">
+            <p>{{video.snippet.channelTitle}}</p>
+            <p>Likes: {{video.statistics.likeCount}}</p>
+            <p>Diskes: {{video.statistics.dislikeCount}}</p>
+            <p>Descrição: {{video.snippet.description}}</p>
+            <p>Views: {{video.statistics.viewCount}}</p>
+          </div>
 
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,8 +43,8 @@ export default {
   },
   methods: {
     search() {
-      const { baseUrl, part, video_id, type, key } = this.api;
-      const apiUrl = `${baseUrl}id=${video_id}&part=${part}&type=${type},statistic&key=${key}`;
+      const { baseUrl, part, video_id, key } = this.api;
+      const apiUrl = `${baseUrl}id=${video_id}&part=${part},statistics&key=${key}`;
       this.getData(apiUrl);
     },
 
