@@ -44,7 +44,7 @@ export default {
         order: 'viewCount',
         maxResults: 12,
         q: '',
-        key: 'AIzaSyB5u43mc2kk-ABL9X5neCp0r27v8fTIGIU',
+        key: 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI',
         prevPageToken: '',
         nextPageToken: ''
       }
