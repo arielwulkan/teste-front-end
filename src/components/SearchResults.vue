@@ -26,7 +26,9 @@
 
     <div class="card-columns" v-if="displayMode === 'grid'">
       <div class="card" v-bind:key="video.id.videoId" v-for="video in videos">
-        <VideoGridItem v-bind:video="video"/>
+        <router-link :to="{name: 'video', params: {id: video.id.videoId}}">
+          <VideoGridItem v-bind:video="video"/>
+        </router-link>
       </div>
     </div>
     <div v-else>
