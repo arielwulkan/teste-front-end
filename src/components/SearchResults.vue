@@ -24,11 +24,13 @@
       </div>
     </div>
 
-    <div class="card-columns" v-if="displayMode === 'grid'">
-      <div class="card" v-bind:key="video.id.videoId" v-for="video in videos">
-        <router-link :to="{name: 'video', params: {id: video.id.videoId}}">
-          <VideoGridItem v-bind:video="video"/>
-        </router-link>
+    <div class="row" v-if="displayMode === 'grid'">
+      <div class="col-md-4 mb-4" v-bind:key="video.id.videoId" v-for="video in videos">
+        <div class="card h-100">
+          <router-link :to="{name: 'video', params: {id: video.id.videoId}}">
+            <VideoGridItem v-bind:video="video"/>
+          </router-link>
+        </div>
       </div>
     </div>
     <div v-else>
