@@ -30,7 +30,6 @@ import axios from 'axios';
 
 export default {
   name: 'Video',
-  props: ['videoId'],
   data() {
     return {
       videos: [],
