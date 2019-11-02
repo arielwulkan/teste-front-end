@@ -35,7 +35,7 @@ export default {
     changeDisplayMode(displayMode) {
       this.displayMode = displayMode;
     },
-    hscroll () {
+    handleScroll () {
       window.onscroll = () => {
         let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
@@ -47,7 +47,7 @@ export default {
   },
   props: ['videos', 'reformattedSearchString', 'nextPageToken'],
   mounted() {
-    this.hscroll();
+    this.handleScroll();
   }
 };
 </script>
