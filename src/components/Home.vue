@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header/>
     <SearchForm v-on:search="search"/>
     <SearchResults
       v-if="videos.length > 0"
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-import Header from './layout/Header';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
 import NoResults from './NoResults';
@@ -22,7 +20,6 @@ import axios from 'axios';
 export default {
   name: 'Home',
   components: {
-    Header,
     SearchForm,
     SearchResults,
     NoResults

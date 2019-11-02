@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form class="mb-5">
+    <form class="mb-5" id="search-form" :class="{ 'has-searched': searchPerformed }">
       <div class="input-group">
         <input
           v-model="searchString"
@@ -24,6 +24,7 @@ export default {
   name: 'SearchForm',
   data() {
     return {
+      searchPerformed: false,
       searchString: ''
     };
   },
@@ -39,6 +40,7 @@ export default {
         this.$emit('search', searchParams);
         // Reset input field
         this.searchString = '';
+        this.searchPerformed = true
       }
     }
   }
@@ -54,4 +56,18 @@ button {
 .form-control {
   border-color: #6c757d;
 }
+
+#search-form{
+  min-height: 80px;
+  
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  transition: 1s cubic-bezier(.7,.28,.47,1.15) height;
+}
+
+#search-form.has-searched     {
+  height: 10vh;
+}
+
 </style>
