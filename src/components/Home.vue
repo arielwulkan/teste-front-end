@@ -8,7 +8,7 @@
       v-bind:reformattedSearchString="reformattedSearchString"
       v-on:next-page="nextPage"
     />
-    <NoResults v-if="noResults == true"><h1>OI</h1></NoResults>
+    <NoResults v-if="noResults"></NoResults>
   </div>
 </template>
 
@@ -31,6 +31,7 @@ export default {
     return {
       videos: [],
       reformattedSearchString: '',
+      noResults: false,
       api: {
         baseUrl: 'https://www.googleapis.com/youtube/v3/search?',
         part: 'snippet',
@@ -40,8 +41,7 @@ export default {
         q: '',
         key: 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI',
         prevPageToken: '',
-        nextPageToken: '',
-        noResults: false
+        nextPageToken: ''
       }
     };
   },
