@@ -8,6 +8,7 @@
       v-bind:reformattedSearchString="reformattedSearchString"
       v-on:next-page="nextPage"
     />
+    <NoResults v-if="noResults == true"><h1>OI</h1></NoResults>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 import Header from './layout/Header';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
+import NoResults from './NoResults';
 import axios from 'axios';
 
 export default {
@@ -23,6 +25,7 @@ export default {
     Header,
     SearchForm,
     SearchResults,
+    NoResults
   },
   data() {
     return {
@@ -37,7 +40,8 @@ export default {
         q: '',
         key: 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI',
         prevPageToken: '',
-        nextPageToken: ''
+        nextPageToken: '',
+        noResults: false
       }
     };
   },
@@ -72,6 +76,9 @@ export default {
           this.videos.push(...items);
           this.api.prevPageToken = res.data.prevPageToken;
           this.api.nextPageToken = res.data.nextPageToken;
+          if (items.length == 0){
+            this.noResults = true
+          }
         })
         //.catch(error => console.log(error));
     }
