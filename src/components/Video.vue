@@ -4,7 +4,7 @@
     <div class="col-md-6 mr-auto ml-auto">
         <div v-bind:key="video.id.videoId" v-for="video in videos">
           <h6 class="mb-3">{{ video.snippet.title }}</h6>
-          <img :src="video.snippet.thumbnails.medium.url" alt="YouTube thumbnail">
+          <iframe width="640" height="360" :src="'https://www.youtube.com/embed/'+video.id" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <div class="d-flex justify-content-between mt-3">
             <p>{{video.snippet.channelTitle}}</p>
             <div class="d-flex">
