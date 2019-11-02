@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     search(searchParams) {
+      this.videos = []
       this.reformattedSearchString = searchParams.join(' ');
       this.api.q = searchParams.join('+');
       const { baseUrl, part, type, order, maxResults, q, key } = this.api;
