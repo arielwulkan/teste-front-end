@@ -68,7 +68,7 @@ export default {
           this.api.prevPageToken = res.data.prevPageToken;
           this.api.nextPageToken = res.data.nextPageToken;
         })
-        //.catch(error => console.log(error));
+        .catch(error => console.log(error));
     }
   },
   created: function() {
