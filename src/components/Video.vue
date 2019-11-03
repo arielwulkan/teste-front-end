@@ -29,6 +29,7 @@
 
 <script>
 import axios from 'axios';
+import { API_KEY } from '@/utils/api';
 
 export default {
   name: 'Video',
@@ -43,7 +44,7 @@ export default {
         order: 'viewCount',
         maxResults: 12,
         video_id: this.$route.params.id,
-        key: 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI',
+        key: API_KEY,
         prevPageToken: '',
         nextPageToken: ''
       }

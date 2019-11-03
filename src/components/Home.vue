@@ -16,6 +16,7 @@ import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
 import NoResults from './NoResults';
 import axios from 'axios';
+import { API_KEY } from '@/utils/api'
 
 export default {
   name: 'Home',
@@ -36,7 +37,7 @@ export default {
         order: 'viewCount',
         maxResults: 12,
         q: '',
-        key: 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI',
+        key: API_KEY,
         prevPageToken: '',
         nextPageToken: ''
       }
