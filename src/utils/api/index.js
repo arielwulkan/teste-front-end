@@ -1,3 +1,3 @@
-const API_KEY = 'AIzaSyCyLyT_Gk3Q2tw-CHLj5W2nXs7aSY8PAjI'
+const API_KEY = 'SUA CHAVE'
 
 export { API_KEY }
